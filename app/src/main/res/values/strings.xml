@@ -4,5 +4,11 @@
     <string name="str_breaking_news">Breaking News</string>
     <string name="str_saved_news">Saved News</string>
     <string name="str_search_news">Search News</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_search">Search...</string>
+    <string name="str_breaking_news_fragment">Breaking News Fragment</string>
+    <string name="str_search_news_fragment">Search News Fragment</string>
+    <string name="str_saved_news_fragment">Saved News Fragment</string>
 
 </resources>

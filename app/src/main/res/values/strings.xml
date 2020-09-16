@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">NewsApp</string>
+
+    <string name="str_breaking_news">Breaking News</string>
+    <string name="str_saved_news">Saved News</string>
+    <string name="str_search_news">Search News</string>
+
 </resources>

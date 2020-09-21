@@ -27,12 +27,13 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
         newsAdapter.setOnItemClickListener {
 
-            Log.e("TAG", "in BR fragment...");
-
             val bundle = Bundle().apply {
                 putSerializable("article", it)
             }
-            findNavController().navigate(R.id.action_breakingNewsFragment_to_articleFragment, bundle)
+            findNavController().navigate(
+                R.id.action_breakingNewsFragment_to_articleFragment,
+                bundle
+            )
         }
 
         viewModel.breakingNewsLiveData.observe(viewLifecycleOwner, Observer { response ->

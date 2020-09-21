@@ -9,20 +9,30 @@ import com.example.newsapp.util.Resource
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class NewsViewModel(val newsRepo: NewsRepository) : ViewModel() {
+class NewsViewModel(private val newsRepo: NewsRepository) : ViewModel() {
 
     val breakingNewsLiveData: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
-    val pageNumber = 1
+    private val breakingNewsPageNumber = 1
+
+    val searchNewsLiveData: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
+    val searchNewsPageNumber = 1
 
     init {
         getBreakingNews("in")
     }
 
-    fun getBreakingNews(countryCode: String) =
+    private fun getBreakingNews(countryCode: String) =
         viewModelScope.launch {
             breakingNewsLiveData.postValue(Resource.Loading())
-            val response = newsRepo.getBreakingNews(countryCode, pageNumber)
+            val response = newsRepo.getBreakingNews(countryCode, breakingNewsPageNumber)
             breakingNewsLiveData.postValue(handleResponse(response))
+        }
+
+    fun searchNews(searchQuery: String) =
+        viewModelScope.launch {
+            searchNewsLiveData.postValue(Resource.Loading())
+            val response = newsRepo.searchNews(searchQuery, searchNewsPageNumber)
+            searchNewsLiveData.postValue(handleResponse(response))
         }
 
     private fun handleResponse(response: Response<NewsResponse>): Resource<NewsResponse> {

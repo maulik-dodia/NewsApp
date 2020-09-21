@@ -10,5 +10,9 @@
     <string name="str_breaking_news_fragment">Breaking News Fragment</string>
     <string name="str_search_news_fragment">Search News Fragment</string>
     <string name="str_saved_news_fragment">Saved News Fragment</string>
+    <string name="str_source">SOURCE</string>
+    <string name="str_title">TITLE</string>
+    <string name="str_description">DESCRIPTION</string>
+    <string name="str_published_at">PUBLISHED AT</string>
 
 </resources>

@@ -13,6 +13,8 @@ import kotlinx.android.synthetic.main.item_article.view.*
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
+    inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+
     private val differCallBack = object : DiffUtil.ItemCallback<Article>() {
 
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
@@ -62,9 +64,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
     private var onItemClickListener: ((Article) -> Unit)? = null
 
-    private fun setOnItemClickListener(listener: (Article) -> Unit) {
+    fun setOnItemClickListener(listener: (Article) -> Unit) {
         onItemClickListener = listener
     }
-
-    inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
